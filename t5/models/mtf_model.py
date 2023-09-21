@@ -51,7 +51,7 @@ class MtfModel(T5Model):
       tpu_topology="v2-8",
       model_parallelism=8,
       batch_size=("sequences_per_batch", 1),
-      sequence_length=None,
+      sequence_length={'inputs': 256, 'targets': 640},
       model_type="bitransformer",
       layout_rules="ensemble:ensemble,batch:batch,d_ff:model,heads:model,vocab:model,experts:batch",
       mesh_shape=None,
